@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Tilted Elliptical Dome Calculator";
+}
+
+<h1>Tilted Elliptical Dome Calculator</h1>
+
+<form method="post">
+
+    <h3>Ellipse Base</h3>
+    <input type="number" step="any" name="A" placeholder="Semi-Major Axis (a)" required />
+    <input type="number" step="any" name="B" placeholder="Semi-Minor Axis (b)" required />
+
+    <h3>Dome Height</h3>
+    <input type="number" step="any" name="H" placeholder="Height (h)" required />
+
+    <h3>Tilt Factor</h3>
+    <input type="number" step="any" name="TiltFactor" placeholder="Tilt Factor (e.g. 1.1)" required />
+
+    <br><br>
+    <button type="submit">Calculate Volume</button>
+</form>
+
+@if (Model.HasResult)
+{
+    <h2>Volume: @Model.Result</h2>
+}
